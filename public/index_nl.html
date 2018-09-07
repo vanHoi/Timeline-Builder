@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Een Gratis en Makkelijke Tijdlijn Bouwer</title>
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/vis.min.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Analytics>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110162572-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110162572-1');
+    </script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<br>
+
+<div class="container text-center">
+
+    <p class="text-right"><a href="index.html">English</a> | <a href="index_nl.html">Nederlands</a></p>
+
+    <h1>Tijdlijn Bouwer</h1>
+
+    <br>
+
+    <p>Een gratis tool waarmee je een snel en simpel een tijdlijn kunt maken.<br>
+        Vul hieronder de gegevens in, en zie een tijdlijn tot stand komen!
+    </p>
+
+    <p>In het eerste vak zet je de (start)datum of het (start)jaar van de gebeurtenis. In het tweede vak kun je een
+        optionele einddatum toevoegen. Ten slotte kun je in het laatste vak een beschrijving toevoegen.<br>
+        <span class="font-weight-bold">Tip:</span> Wanneer je je met de muis in het tijdlijn venster begeeft, kun je
+        zoomen en schuiven over de tijdleen heen!</p>
+
+    <br>
+
+    <label for="timelineTitleInput">Voer een titel in:</label>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Titel" id="timelineTitleInput">
+    </div>
+
+    <br>
+
+    <label>Gebeurtenissen</label>
+
+    <div class="row" id="event1">
+        <div class="col-xl-2 col-md-3 col-sm-6">
+            <div class="input-group">
+                <input type="number" class="form-control" placeholder="Jaar Van" id="eventStart1" required>
+            </div>
+        </div>
+        <div class="col-xl-2 col-md-3 col-sm-6">
+            <div class="input-group">
+                <input type="number" class="form-control" placeholder="Jaar Tot" id="eventEnd1">
+            </div>
+        </div>
+        <div class="col-xl-8 col-md-6 col-sm-12">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Gebeurtenis" id="eventName1" required>
+            </div>
+        </div>
+    </div>
+
+    <div id="addEventsHere"></div>
+
+    <div class="clearfix"></div>
+    <br>
+
+    <button class="btn btn-primary" onclick="addEvent('addEventsHere')">Voeg gebeurtenis toe</button>
+    <button class="btn btn-success"
+            onclick="createTimeline('visualization', 'timelineTitleInput', 'timelineTitle', 'downloadButton')">
+        Genereer tijdlijn
+    </button>
+
+    <div id="clearfix"></div>
+    <br>
+
+    <div id="timeline">
+        <h1 id="timelineTitle" class="text-center"></h1>
+        <div id="visualization"></div>
+    </div>
+
+    <div id="downloadButton" style="visibility: hidden;">
+        <div class="clearfix"></div>
+        <br>
+        <h2>Download je tijdlijn!</h2>
+        <p>Klik eerst op 'Stap 1: Genereer Foto', vervolgens kun je op 'Stap 2: Download Tijdlijn' klikken om je
+            tijdlijn te downloaden als PNG bestand!</p>
+        <button class="btn btn-warning" onclick="downloadTimeline('timeline', 'downloadKnop')">Stap 1: Genereer Foto
+        </button>
+        <a href="" id="downloadKnop" download>
+            <button class="btn btn-warning">Stap 2: Download Tijdlijn</button>
+        </a>
+    </div>
+
+    <div class="clearfix"></div>
+    <br>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Tijdlijn Bouwer -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7525147214420876"
+         data-ad-slot="9694502402"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <div class="clearfix"></div>
+    <br>
+    <hr>
+    <br>
+    <p>Gemaakt door Ivo Reumkens, met behulp van <a href="http://visjs.org/index.html" target="_blank">vis.js</a> en <a
+            href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a>. </p>
+
+</div>
+
+<!-- Javascript -->
+<!-- Tijdlijn bouwer scripts -->
+<script src="js/timelineBuilder.js"></script>
+<!-- vis.js -->
+<script src="js/vis.min.js"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- html2canvas -->
+<script src="js/html2canvas/html2canvas.min.js"></script>
+<script src="js/html2canvas/html2canvas.svg.min.js"></script>
+<!-- Cookiemelding -->
+<script type="text/javascript">
+    window.cookieconsent_options = {
+        "message": "Deze site maakt gebruik van cookies voor een betere ervaring.",
+        "dismiss": "Oké!",
+        "learnMore": "",
+        "link": null,
+        "theme": "dark-bottom"
+    };
+</script>
+<script async type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+
+</body>
+</html>
